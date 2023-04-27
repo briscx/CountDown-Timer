@@ -12,8 +12,8 @@ function countdown() {
 
     const totalSeconds = (birthDayDate - currentDate) / 1000;
 
-    const week = Math.floor(totalSeconds / 3600 /24 / 7);
-    const days = Math.floor(totalSeconds / 3600 / 24);
+    const week = Math.floor(totalSeconds / 3600 / 24 / 7);
+    const days = Math.floor(totalSeconds / 3600/ 24) % 7;
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const mins = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds) % 60;
