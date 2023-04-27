@@ -1,21 +1,24 @@
+const weekEl = document.getElementById("week")
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
 const secondsEl = document.getElementById("seconds");
 
-const may1 = "01 May 2023";
+const birthDay = "18 Jun 2023";
 
 function countdown() {
-    const may1Date = new Date(may1);
+    const birthDayDate = new Date(birthDay);
     const currentDate = new Date();
 
-    const totalSeconds = (may1Date - currentDate) / 1000;
+    const totalSeconds = (birthDayDate - currentDate) / 1000;
 
+    const week = Math.floor(totalSeconds / 3600 /24 / 7);
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const mins = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds) % 60;
 
+    weekEl.innerHTML = week;
     daysEl.innerHTML = days;
     hoursEl.innerHTML = formatTime(hours);
     minsEl.innerHTML = formatTime(mins);
